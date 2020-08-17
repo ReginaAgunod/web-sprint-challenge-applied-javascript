@@ -12,26 +12,29 @@
 // and append it to the DOM inside the div.header-container
 
 function Header() {
-    let div = document.createElement('div');
-    div.classList.add('header');
-
-    let date = document.createElement('span');
-    date.textContent = 'MARCH 28, 2019';
-    date.classList.add('date');
-    div.appendChild(date);
-
-    let h1 = document.createElement('h1');
-    h1.textContent = 'Lambda Times';
-    div.appendChild(h1);
-
-    let temp = document.createElement('temp');
-    temp.classList.add('temp');
+//Create Element
+    const header = document.createElement('div');
+    const date = document.createElement('span');
+    const title = document.createElement('h1');
+    const temp = document.createElement('span');
+//Create Structure
+    header.appendChild(date);
+    header.appendChild(title);
+    header.appendChild(temp);
+//Set Content
+    date.textContent = 'March 28, 2020';
+    title.textContent = 'Lambda Times';
     temp.textContent = '98°';
-    div.appendChild(temp);
+//Apply Structure
+    header.classList.add('header');
+    date.classList.add('date');
+    title.classList.add('h1');
+    temp.classList.add('temp');
 
-    return div;
-}
+//Return Component
+    return header;
+};
 
-const header = Header();
+const headerContainer = document.querySelector('.header-container');
 
-document.querySelector('div.header-container').appendChild(header); 
+headerContainer.appendChild(Header());
