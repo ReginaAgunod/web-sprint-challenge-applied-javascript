@@ -15,27 +15,27 @@
 // Function to add elements to the DOM
 function Header() {
   // Create Element
-  const header = document.createElement('div');
-  const date = document.createElement('span');
-  const title = document.createElement('h1');
-  const temp = document.createElement('span');
+  const header = document.createElement("div");
+  const date = document.createElement("span");
+  const title = document.createElement("h1");
+  const temp = document.createElement("span");
   // Create Structure
   header.appendChild(date);
   header.appendChild(title);
   header.appendChild(temp);
   // Set Content
-  date.textContent = 'March 28, 2020';
-  title.textContent = 'Lambda Times';
-  temp.textContent = '98°';
+  date.textContent = "March 28, 2020";
+  title.textContent = "Lambda Times";
+  temp.textContent = "98°";
   // Apply Structure
-  header.classList.add('header');
-  date.classList.add('date');
-  title.classList.add('h1');
-  temp.classList.add('temp');
+  header.classList.add("header");
+  date.classList.add("date");
+  title.classList.add("h1");
+  temp.classList.add("temp");
 
   return header;
-};
+}
 
-const headerContainer = document.querySelector('.header-container');
+const headerContainer = document.querySelector(".header-container");
 
 headerContainer.appendChild(Header());
