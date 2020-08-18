@@ -25,8 +25,7 @@
 // Selecting element in the DOM
 const cardContainer = document.querySelector('.cards-container');
 
-axios
-    .get("https://lambda-times-api.herokuapp.com/articles")
+axios.get("https://lambda-times-api.herokuapp.com/articles")
     .then(response => {
         console.log(response);
         const tabs = document.getElementsByClassName("tab");
@@ -63,3 +62,38 @@ axios
             });
         });
     });
+
+    
+// Function to add elements to the DOM
+function ArticleCreator(article) {
+
+//Create Element
+    const card = document.createElement('div');
+    const headline = document.createElement('div');
+    const author = document.createElement('div');
+    const imgCont = document.createElement('div');
+    const img = document.createElement('img');
+    const byName = document.createElement('span');
+        
+//Create Structure
+    card.appendChild(headline);
+    card.appendChild(author);
+    author.appendChild(imgCont);
+    imgCont.appendChild(img);
+    author.appendChild(byName);
+        
+//Set Content
+    headline.textContent = article.headline;
+    img.src = article.authorPhoto;
+    byName.textContent = `By ${article.authorName}`;
+        
+//Apply Structure
+    card.classList.add('card');
+    headline.classList.add('headline');
+    author.classList.add('author');
+    imgCont.classList.add('img-container');
+    img.classList.add('img');
+    byName.classList.add('span');
+        
+    return card;
+};
