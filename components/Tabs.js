@@ -10,6 +10,7 @@
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
 
+// Selecting element in the DOM
 const tabsTopics = document.querySelector('.topics');
 
 axios.get('https://lambda-times-api.herokuapp.com/topics')
@@ -25,6 +26,7 @@ axios.get('https://lambda-times-api.herokuapp.com/topics')
     console.log("Error:", err);
   });
 
+// Function to add elements to the DOM
 function TabCreator(data) {
 //Create Element
   const tab = document.createElement('div');

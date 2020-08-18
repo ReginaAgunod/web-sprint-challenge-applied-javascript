@@ -11,6 +11,8 @@
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
 
+
+// Function to add elements to the DOM
 function Header() {
 //Create Element
     const header = document.createElement('div');
@@ -31,7 +33,6 @@ function Header() {
     title.classList.add('h1');
     temp.classList.add('temp');
 
-//Return Component
     return header;
 };
 
