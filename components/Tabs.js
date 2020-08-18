@@ -1,39 +1,38 @@
 // STEP 2: Create tabs
 // -----------------------
-// Using axios send a GET request to the address: https://lambda-times-api.herokuapp.com/topics
-// Once the data is resolved use console logs or breakpoints to review the structure.
-// Iterate over the topics creating a new tab for each topic, and appending it to the DOM
-// under the div.topics element.
+// Using axios send a GET request to the address:
+// https://lambda-times-api.herokuapp.com/topics Once the data is resolved use
+// console logs or breakpoints to review the structure. Iterate over the topics
+// creating a new tab for each topic, and appending it to the DOM under the
+// div.topics element.
 //
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
 //
-// NOTE: you do _not_ need to install axios as it's included in the HTML via script element
+// NOTE: you do _not_ need to install axios as it's included in the HTML via
+// script element
 
 // Selecting element in the DOM
 const tabsTopics = document.querySelector('.topics');
 
 axios.get('https://lambda-times-api.herokuapp.com/topics')
-  .then((results) => {
-    console.log(results);
-    results.data.topics.forEach(data => {
+    .then((results) => {
+      console.log(results);
+      results.data.topics.forEach(data => {
         const newTab = TabCreator(data);
         tabsTopics.appendChild(newTab);
+      })
     })
-
-  })
-  .catch( (err) => {
-    console.log("Error:", err);
-  });
+    .catch((err) => { console.log("Error:", err); });
 
 // Function to add elements to the DOM
 function TabCreator(data) {
-//Create Element
+  // Create Element
   const tab = document.createElement('div');
-//Set Content
+  // Set Content
   tab.textContent = data;
-//Apply Structure
+  // Apply Structure
   tab.classList.add('tab');
-  
+
   return tab;
 };
