@@ -30,7 +30,8 @@ axios.get("https://lambda-times-api.herokuapp.com/articles")
         console.log(response);
         const tabs = document.getElementsByClassName("tab");
         console.log(tabs);
-
+        
+// Event listener for each tab 'Click to drop down content 
         tabs[0].addEventListener("click", e => {
             cardContainer.innerHTML = "";
             response.data.articles.javascript.forEach(item => {
